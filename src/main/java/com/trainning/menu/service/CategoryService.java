@@ -1,17 +1,17 @@
-package com.trainning.menu.service;
+package com.training.menu.service;
+
+import com.training.menu.models.Category;
+import com.training.menu.models.CreateCategoryRequest;
+import com.training.menu.models.MenuException;
 
 import java.util.List;
 
-
-import com.trainning.menu.models.Catgeory;
-import com.trainning.menu.models.CreateCategoryRequest;
-
-
+import org.springframework.data.domain.Sort.Direction;
 
 public interface CategoryService {
-	
-	Catgeory createNewCategory(CreateCategoryRequest createCategoryRequest);
-	
-    List<Catgeory> listAllCategories();
-	
+    Category createNewCategory(CreateCategoryRequest createCategoryRequest);
+
+    List<Category> listAllCategories(int pageSize, int pageNumber, String direction, String properties);
+    
+    void delete(String categoryId) throws MenuException;
 }
