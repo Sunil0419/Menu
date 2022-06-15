@@ -52,6 +52,8 @@ c ResponseEntity<?> listAllCategories(@RequestHeader HttpHeaders headers, @Reque
 			categoryService.delete(categoryId);
 			return ResponseEntity.ok("category id is deleted successfully!");
 		} catch (MenuException m) {
+			//nice
+			//nice
 			return ResponseEntity.ok(m.getMessage());
 
 		}
